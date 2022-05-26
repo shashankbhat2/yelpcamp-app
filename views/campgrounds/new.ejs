@@ -1,0 +1,41 @@
+<% layout('layouts/container') %>
+    <div class="p-4 bg-light row">
+        <h3 class="mt-4 text-center mb-4">Add a New Campground</h3>
+        <div class="col-6 offset-3">
+            <form action="/campgrounds" enctype="multipart/form-data" class="validated-form" method="POST" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="campground[title]" required class="form-control" id="title" />
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" name="campground[location]" class="form-control" id="location" required />
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input multiple name="image" class="form-control" type="file" id="formFile">
+                </div>
+                <div class="mb-3">
+                    <label for="price">Price Per Night</label>
+                    <div class="input-group py-3">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" name="campground[price]" id="price" aria-labelledby="price" required
+                            aria-describedby="price-label" class="form-control" placeholder="price">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea type="text" name="campground[description]" class="form-control" id="description"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success p-2 mb-3">
+                    <strong>
+                        Add Campground
+                    </strong>
+                </button>
+            </form>
+            <a href="/campgrounds" class="btn btn-secondary">
+                All Campgrounds
+            </a>
+        </div>
+    </div>
